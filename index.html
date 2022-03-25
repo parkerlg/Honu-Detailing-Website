@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Script -->
+    <script src="script.js" defer></script>
+    <title>Honu Detailing</title>
+</head>
+
+<body>
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1 class="center header-title hero-text">Honu Detailing</h1>
+        </div>
+    </div>
+    <!-- Links Nav Bar -->
+    <main>
+        <ul class="links">
+            <li data-link-target="#about" class="active link">About</li>
+            <span class="spacer"></span>
+            <li data-link-target="#pricing" class=" link">Pricing</li>
+            <span class="spacer"></span>
+            <li data-link-target="#contact" class=" link">Contact</li>
+        </ul>
+        <div class="link-content">
+            <!-- About Us Page -->
+            <div id="about" data-link-content class="active">
+                <h1 class="center page-title">About Honu Detailing</h1>
+            </div>
+            <!-- Pricing -->
+            <div id="pricing" data-link-content>
+                <h1 class="center page-title">Pricing</h1>
+                <!-- Pricing Nav Bar -->
+                <ul class="tabs">
+                    <li data-tab-target="#deluxe" class="active tab">Deluxe Package</li>
+                    <span class="spacer"></span>
+                    <li data-tab-target="#platinum" class="tab">Platinum Package</li>
+                    <span class="spacer"></span>
+                    <li data-tab-target="#express" class="tab">Express Package</li>
+                </ul>
+                <div class="tab-content">
+                    <!-- Deluxe Package -->
+                    <div id="deluxe" data-tab-content class="active">
+                        <div class="content-details">
+                            <h3>Deluxe</h3>
+                            <article>
+                                <div class="article-pricing">
+                                    <h4>Pricing</h4>
+                                    <ul class="content-pricing">
+                                        <li>
+                                            <div>SUV/Minivan</div>
+                                            <div>$300</div>
+                                        </li>
+                                        <li>
+                                            <div>Truck</div>
+                                            <div>$280</div>
+                                        </li>
+                                        <li>
+                                            <div>Sedan</div>
+                                            <div>$250</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="article-features">
+                                    <h4>Features</h4>
+                                    <div class="div-features">
+                                        <div>
+                                            <h5>Interior</h5>
+                                            <ul>
+                                                <li>Vacuum</li>
+                                                <li>Deep steam cup holders/grime</li>
+                                            </ul>
+                                        </div>
+                                        <div>
+                                            <h5>Exterior</h5>
+                                            <ul>
+                                                <li>Foam wash (Watermelon Foam)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- Trigger/Open The Modal -->
+                            <button id="deluxeFormBtn" class="modal-button">Pick Deluxe Plan</button>
+                            <div id="deluxeFormModal" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close" id="deluxeClose">&times;</span>
+                                    <h2>Deluxe Package</h2>
+                                    <form method="POST" action="email.php" name="deluxe_form" class="deluxeForm">
+                                        <label class="input">
+                                            <input class="input__field" type="text" placeholder=" " id="fullName"
+                                                name="fullName" />
+                                            <span class="input__label">Full Name</span>
+                                        </label>
+                                        <br>
+                                        <label class="input">
+                                            <input class="input__field" type="email" placeholder=" " id="email"
+                                                name="email" />
+                                            <span class="input__label">Email</span>
+                                        </label>
+                                        <br>
+                                        <label class="input">
+                                            <input class="input__field" type="tel" placeholder=" " id="phone"
+                                                name="phone" />
+                                            <span class="input__label">Phone</span>
+                                        </label>
+                                        <h3>Car Information</h3>
+                                        <select name="car_type" id="car_type" class="carTypeDropdown">
+                                            <option value="Select Car Type" default>Select Car Type</option>
+                                            <option value="SUV">SUV</option>
+                                            <option value="Pickup">Pickup</option>
+                                            <option value="Van/Minivan">Van/Minivan</option>
+                                            <option value="Wagon">Wagon</option>
+                                            <option value="Sedan">Sedan</option>
+                                            <option value="Coupe">Coupe</option>
+                                            <option value="Hatchback">Hatchback</option>
+                                        </select>
+                                        <br>
+                                        <br>
+                                        <label class="input">
+                                            <input class="input__field" type="text" placeholder=" " id="carMake"
+                                                name="carMake" />
+                                            <span class="input__label">Make</span>
+                                        </label>
+                                        <br>
+                                        <label class="input">
+                                            <input class="input__field" type="text" placeholder=" " id="carModel"
+                                                name="carModel" />
+                                            <span class="input__label">Model</span>
+                                        </label>
+                                        <br>
+                                        <label for="Detail Type">Detail Type</label>
+                                        <br>
+                                        <span>Deluxe</span><input type="radio" name="detail_radio" id="radioDeluxe"
+                                            value="Deluxe" checked=True>
+                                        <span>Platinum</span><input type="radio" name="detail_radio" id="radioPlatinum"
+                                            value="Platinum">
+                                        <span>Express</span><input type="radio" name="detail_radio" id="radioExpress"
+                                            value="Express">
+                                        <input type="submit" value="Send Detail Request">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Platinum Package -->
+                    <div id="platinum" data-tab-content class="">
+                        <div class="content-details">
+                            <h3>Platinum</h3>
+                            <button id="platinumFormBtn" class="modal-button">Pick Platnium Plan</button>
+                            <!-- The Modal -->
+                            <div id="platinumFormModal" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close" id="platinumClose">&times;</span>
+                                    <form method="post" action="email.php" name="platinum_form" class="platinumForm">
+                                        <label for="name">Full Name</label>
+                                        <input type="text" name="name" id="name">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email">
+                                        <label for="phone">Phone</label>
+                                        <input type="tel" name="phone" id="phone">
+                                        <p>Car Information</p>
+                                        <label for="car_type">Type</label>
+                                        <select name="car_type" id="car_type">
+                                            <option value="SUV">SUV</option>
+                                            <option value="Pickup">Pickup</option>
+                                            <option value="Van/Minivan">Van/Minivan</option>
+                                            <option value="Wagon">Wagon</option>
+                                            <option value="Sedan">Sedan</option>
+                                            <option value="Coupe">Coupe</option>
+                                            <option value="Hatchback">Hatchback</option>
+                                        </select>
+                                        <label for="car_make">Make</label>
+                                        <input type="text" name="car_make" id="car_make" placeholder="Make">
+                                        <label for="car_model">Model</label>
+                                        <input type="text" name="car_model" id="car_model" placeholder="Model">
+                                        <label for="Detail Type">Detail Type</label>
+                                        <span>Deluxe</span><input type="radio" name="detail_radio" id="radioDeluxe"
+                                            value="Deluxe">
+                                        <span>Platinum</span><input type="radio" name="detail_radio" id="radioPlatinum"
+                                            value="Platinum" checked=True>
+                                        <span>Express</span><input type="radio" name="detail_radio" id="radioExpress"
+                                            value="Express">
+                                        <input type="submit" value="Send Detail Request">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Express Package -->
+                    <div id="express" data-tab-content class="">
+                        <div class="content-details">
+                            <h3>Express</h3>
+                            <button id="expressFormBtn" class="modal-button">Pick Express Plan</button>
+                            <!-- The Modal -->
+                            <div id="expressFormModal" class="modal">
+                                <!-- Modal content -->
+                                <div class="modal-content">
+                                    <span class="close" id="expressClose">&times;</span>
+                                    <form method="post" action="email.php" name="express_form" class="expressForm">
+                                        <label for="name">Full Name</label>
+                                        <input type="text" name="name" id="name">
+                                        <label for="email">Email</label>
+                                        <input type="email" name="email" id="email">
+                                        <label for="phone">Phone</label>
+                                        <input type="tel" name="phone" id="phone">
+                                        <p>Car Information</p>
+                                        <label for="car_type">Type</label>
+                                        <select name="car_type" id="car_type">
+                                            <option value="SUV">SUV</option>
+                                            <option value="Pickup">Pickup</option>
+                                            <option value="Van/Minivan">Van/Minivan</option>
+                                            <option value="Wagon">Wagon</option>
+                                            <option value="Sedan">Sedan</option>
+                                            <option value="Coupe">Coupe</option>
+                                            <option value="Hatchback">Hatchback</option>
+                                        </select>
+                                        <label for="car_make">Make</label>
+                                        <input type="text" name="car_make" id="car_make" placeholder="Make">
+                                        <label for="car_model">Model</label>
+                                        <input type="text" name="car_model" id="car_model" placeholder="Model">
+                                        <label for="Detail Type">Detail Type</label>
+                                        <span>Deluxe</span><input type="radio" name="detail_radio" id="radioDeluxe"
+                                            value="Deluxe">
+                                        <span>Platinum</span><input type="radio" name="detail_radio" id="radioPlatinum"
+                                            value="Platinum">
+                                        <span>Express</span><input type="radio" name="detail_radio" id="radioExpress"
+                                            value="Express" checked=True>
+                                        <input type="submit" value="Send Detail Request">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="contact" data-link-content>
+                <h1 class="center page-title">Contact Us</h1>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>

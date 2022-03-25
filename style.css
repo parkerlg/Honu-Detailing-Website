@@ -1,0 +1,359 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Poppins:wght@300&family=Rouge+Script&display=swap');
+
+/* Color Pallete */
+/* CSS HEX */
+:root {
+    --robin-egg-blue: #00e0e0ff;
+    --white: #ffffffff;
+    --wheat: #e9d0afff;
+    --raisin-black: #2d2a32ff;
+    --deep-taupe: #6b5e62ff;
+    --poppins: 'Poppins', sans-serif;
+    --pt-serif: 'PT Serif', serif;
+    --rouge: 'Rouge Script', cursive;
+
+    --size-bezel: .5rem;
+    --size-radius: 4px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    background-color: var(--wheat);
+    height: 100%;
+}
+
+h3 {
+    margin: 0;
+    padding: 1rem;
+}
+
+.header-bg {
+    background: var(--wheat);
+    /* fallback for old browsers */
+    border-bottom: 2px solid var(--raisin-black);
+}
+
+.center {
+    text-align: center;
+}
+
+
+.header-title {
+    color: var(--raisin-black);
+    font-family: var(--rouge);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100px;
+    line-height: 70px;
+    margin: 0px;
+    padding: 2%;
+    text-align: center;
+}
+
+.page-title {
+    color: var(--raisin-black);
+    font-family: var(--pt-serif);
+    font-style: normal;
+    font-weight: normal;
+    font-size: 50px;
+    line-height: 70px;
+    margin: 0px;
+    padding: 2%;
+    text-align: center;
+
+}
+
+body,
+html {
+    height: 100%;
+}
+
+/* The hero image */
+.hero-image {
+    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("hero-image.jpg");
+
+    /* Set a specific height */
+    height: 40%;
+
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.link-content {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.link {
+    border-radius: 10px 10px 10px 10px;
+    width: 10rem;
+    font-family: var(--pt-serif);
+    color: var(--white);
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 1em 1em 1em 1em;
+    margin: 0;
+    background-color: var(--deep-taupe);
+    box-shadow:
+        0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075),
+        0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075),
+        0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+.link.active {
+    background-color: var(--raisin-black);
+    color: var(--white);
+}
+
+.link:hover {
+    background-color: var(--raisin-black);
+    color: var(--white);
+}
+
+[data-link-content] {
+    display: none;
+}
+
+.active[data-link-content] {
+    display: block;
+}
+
+[data-tab-content] {
+    display: none;
+}
+
+.active[data-tab-content] {
+    display: block;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 1em 1em 0em 1em;
+    margin: 0;
+    background-color: var(--wheat);
+}
+
+
+.tab {
+    border-radius: 10px 10px 0px 0px;
+    width: 10rem;
+    font-family: var(--pt-serif);
+    color: var(--raisin-black);
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+}
+
+
+.tab.active {
+    background-color: var(--raisin-black);
+    color: var(--white);
+}
+
+.tab:hover {
+    background-color: var(--raisin-black);
+    color: var(--white);
+}
+
+.tab-content {
+    /* margin-left: 20px;
+    margin-right: 20px; */
+    background-color: var(--white);
+    border: 1px solid var(--raisin-black);
+    border-radius: 10px 10px 10px 10px;
+    box-shadow:
+        0 1px 1px hsl(0deg 0% 0% / 0.075),
+        0 2px 2px hsl(0deg 0% 0% / 0.075),
+        0 4px 4px hsl(0deg 0% 0% / 0.075),
+        0 8px 8px hsl(0deg 0% 0% / 0.075),
+        0 16px 16px hsl(0deg 0% 0% / 0.075);
+}
+
+.content-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.spacer {
+    width: 80px;
+}
+
+/* Modal View */
+/* The Modal (background) */
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    /* 15% from the top and centered */
+    padding: 40px;
+    border: 1px solid #888;
+    width: 50%;
+    /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-button {
+    background-color: var(--robin-egg-blue);
+    /* Green */
+    border: var(--raisin-black);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1rem;
+    border-radius: 10px;
+    align-self: center;
+}
+
+/* form input:not(input[type=radio]) {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+ */
+
+ /* Form Input  */
+.input {
+    position: relative;
+}
+.input__label {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: calc(var(--size-bezel) * 0.75) calc(var(--size-bezel) * .5);
+    margin: calc(var(--size-bezel) * 0.75 + 3px) calc(var(--size-bezel) * .5);
+    white-space: nowrap;
+    transform: translate(0, 10);
+    transform-origin: 0 0;
+    background: var(white);
+    transition: transform 120ms ease-in;
+    line-height: 0.8;
+    color: gray;
+}
+.input__field {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 2px solid --raisin-black;
+    padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+    color: currentColor;
+    background: transparent;
+    border-radius: var(--size-radius);
+}
+.input__field:focus + .input__label, .input__field:not(:placeholder-shown) + .input__label {
+    transform: translate(0.25rem, -65%) scale(0.8);
+    background-color: white;
+    color: var(--raisin-black);
+    font-weight: bold;
+}
+
+.carTypeDropdown {
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    border: 2px solid --raisin-black;
+    padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
+    color: currentColor;
+    background: transparent;
+    border-radius: var(--size-radius);
+}
+
+
+.content-pricing {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0;
+    display: flex;  
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.content-pricing li {
+    display: inline;
+    width: 100px;
+    background-color: var(--deep-taupe);
+    border: .2rem solid var(--raisin-black);
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
+    color: white;
+}
+
+h4 {
+    text-align: center;
+}
+
+.div-features {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
