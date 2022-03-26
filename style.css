@@ -16,15 +16,20 @@
     --size-bezel: .5rem;
     --size-radius: 4px;
 }
+* {
+    box-sizing: unset;
+}
 
 body {
     padding: 0;
     margin: 0;
+    background-color: var(--wheat);
 }
 
 main {
     background-color: var(--wheat);
-    height: 100%;
+    height: fit-content;
+    margin-bottom: 100px;
 }
 
 h3 {
@@ -259,7 +264,20 @@ html {
 
 .modal-button {
     background-color: var(--robin-egg-blue);
-    /* Green */
+    border: var(--raisin-black);
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1rem;
+    border-radius: 10px;
+    align-self: center;
+}
+
+.modal-submit {
+    background-color: var(--robin-egg-blue);
     border: var(--raisin-black);
     color: white;
     padding: 15px 32px;
@@ -280,10 +298,11 @@ html {
 }
  */
 
- /* Form Input  */
+/* Form Input  */
 .input {
     position: relative;
 }
+
 .input__label {
     position: absolute;
     left: 0;
@@ -298,17 +317,20 @@ html {
     line-height: 0.8;
     color: gray;
 }
+
 .input__field {
     box-sizing: border-box;
     display: block;
     width: 100%;
-    border: 2px solid --raisin-black;
+    border: 2px solid var(--raisin-black);
     padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
     color: currentColor;
     background: transparent;
     border-radius: var(--size-radius);
 }
-.input__field:focus + .input__label, .input__field:not(:placeholder-shown) + .input__label {
+
+.input__field:focus+.input__label,
+.input__field:not(:placeholder-shown)+.input__label {
     transform: translate(0.25rem, -65%) scale(0.8);
     background-color: white;
     color: var(--raisin-black);
@@ -319,24 +341,122 @@ html {
     box-sizing: border-box;
     display: block;
     width: 100%;
-    border: 2px solid --raisin-black;
+    border: 2px solid var(--raisin-black);
     padding: calc(var(--size-bezel) * 1.5) var(--size-bezel);
-    color: currentColor;
+    color: gray;
     background: transparent;
     border-radius: var(--size-radius);
+    line-height: 0.8;
 }
 
+/* Radio Toolbar */
+
+.radio-toolbar {
+    margin: 10px;
+    display: flex;
+}
+
+@media screen and (min-width: 550px) {
+    .radio-toolbar {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .radio-toolbar {
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.radio-toolbar input[type="radio"] {
+    opacity: 0;
+    position: fixed;
+    width: 0;
+}
+
+.radio-toolbar label {
+    display: inline-block;
+    background-color: #ddd;
+    padding: 10px 20px;
+    font-family: sans-serif, Arial;
+    font-size: 16px;
+    border: 2px solid #444;
+    border-radius: 4px;
+    width: 20%;
+    text-align: center;
+}
+
+.radio-toolbar label:hover {
+    background-color: var(--rouge);
+}
+
+.radio-toolbar input[type="radio"]:focus+label {
+    border: 2px solid #444;
+}
+
+.radio-toolbar input[type="radio"]:checked+label {
+    background-color: var(--deep-taupe);
+    border-color: var(--raisin-black);
+    color: white;
+}
 
 .content-pricing {
     padding-left: 30px;
     padding-right: 30px;
     margin: 0;
-    display: flex;  
+    display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
-.content-pricing li {
+@media screen and (max-width: 550px) {
+    .content-pricing {
+        padding-left: 30px;
+        padding-right: 30px;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .content-pricing li {
+        width: 60%;
+        display: inline;
+        background-color: var(--deep-taupe);
+        border: 2px solid var(--raisin-black);
+        border-radius: 10px;
+        text-align: center;
+        padding: 10px 20px 10px 20px;
+        color: white;
+        margin: 10px;
+        font-size: large;
+        font-weight: bolder;
+
+    }
+
+}
+
+@media screen and (min-width: 550px) {
+    .content-pricing li {
+        width: 200px;
+        display: inline;
+        background-color: var(--deep-taupe);
+        border: 2px solid var(--raisin-black);
+        border-radius: 10px;
+        text-align: center;
+        padding: 10px 20px 10px 20px;
+        color: white;
+        margin: 10px;
+        font-size: large;
+        font-weight: bolder;
+    }
+}
+
+/* .content-pricing li {
     display: inline;
     width: 100px;
     background-color: var(--deep-taupe);
@@ -345,15 +465,208 @@ html {
     text-align: center;
     padding: 10px 20px 10px 20px;
     color: white;
-}
+    margin: 10px
+} */
 
 h4 {
     text-align: center;
+    font-size: 20px;
+    padding: 0px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
-.div-features {
+h5 {
+    text-decoration: underline;
+    font-size: large;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+@media screen and (min-width: 550px) {
+    .div-features {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-content: center;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .div-features {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        padding: 0 20px 0 20px;
+        margin: 0 10px 0 10px;
+    }
+
+}
+
+.deluxeForm {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-
+    flex-direction: column;
 }
+
+/* Footer */
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900);
+ 
+footer {
+	 bottom: 0;
+	 left: 0;
+	 right: 0;
+     height: 70px;
+}
+ footer div.social-media-links {
+	 background: var(--deep-taupe);
+	 overflow: hidden;
+	 padding-bottom: 4px;
+	 text-align: center;
+}
+ footer div.social-media-links ul {
+	 margin: 0;
+	 padding: 0;
+     height: 70px;
+}
+ footer div.social-media-links li {
+	 display: inline;
+	 margin: 0;
+	 padding: 0;
+}
+ footer div.social-media-links a {
+	 border-bottom: 0px solid rgba(0,0,0,0.95);
+	 border-radius: 4px;
+	 display: inline-block;
+	 height: 40px;
+	 padding: 20px;
+	 position: relative;
+	 transition: .2s ease-in;
+	 width: 30px;
+}
+ footer div.social-media-links a svg {
+	 left: 20px;
+	 position: absolute;
+	 top: 20px;
+	 height: 30px;
+	 width: 30px;
+}
+ footer div.social-media-links a svg.glow path, footer div.social-media-links a svg.glow circle {
+	 fill: rgba(0,0,0,0);
+}
+ footer div.social-media-links a svg path, footer div.social-media-links a svg circle {
+	 fill: var(--wheat);
+	 transition: .2s ease-in;
+}
+ footer div.social-media-links a:hover {
+	 transform: translateY(-4px);
+}
+ 
+#about div {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+}
+
+#contact div {
+    height: 300px;
+}
+
+/* Slideshow */
+
+* {
+    box-sizing: border-box;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+    margin-right: 40px;
+    margin-left: 40px;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -200px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 20px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    float: left;
+    width: 16.66%;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+  #about img {
+      width: 70%;
+      height: 100%;
+  }

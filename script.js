@@ -100,5 +100,3 @@ window.onclick = function(event) {
   }
 }
 
-
-// Modal refactor
